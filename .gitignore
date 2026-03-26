@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+build/
+dist/
+dist.zip
+*.exe
+*.db
+.env
+*.spec
+telechargements/
+telechargements/
+images/
