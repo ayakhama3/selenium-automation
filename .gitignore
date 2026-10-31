@@ -1,13 +1,23 @@
+# Environnements virtuels et caches Python
 venv/
+.venv/
 __pycache__/
 *.pyc
+
+# Build / distribution
 build/
 dist/
 dist.zip
 *.exe
-*.db
-.env
 *.spec
+
+# Secrets et données locales (ne jamais versionner)
+.env
+*.db
+
+# Fichiers téléchargés ou générés à l'exécution
 telechargements/
-telechargements/
-images/
+telechergements/
+*.zip
+fichiers_excel/
+erreur_generale.png

@@ -8,11 +8,15 @@ from PIL import Image
 import pytesseract
 
 # === CONFIG ===
-# Chemin vers Poppler (à adapter à ton installation)
-POPPLER_PATH = r"C:\Users\HP\Downloads\Release-24.08.0-0\poppler-24.08.0\Library\bin"
+# Chemin vers Poppler : variable d'environnement POPPLER_PATH
+# (si elle est absente, Poppler doit être accessible via le PATH)
+POPPLER_PATH = os.environ.get("POPPLER_PATH") or None
 
-# Chemin vers Tesseract (à adapter à ton installation)
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# Chemin vers Tesseract : variable d'environnement TESSERACT_CMD
+# (défaut : emplacement d'installation standard sous Windows)
+pytesseract.pytesseract.tesseract_cmd = os.environ.get(
+    "TESSERACT_CMD", r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+)
 
 # === Dossiers ===
 telechargements_dir = os.path.abspath("telechargements")

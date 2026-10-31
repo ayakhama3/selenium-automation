@@ -192,15 +192,17 @@ def lancer_navigation(email_gsf, mdp_gsf, email_mp, mdp_mp, num_marche, lien_fic
 
 
 # ===========================
-# Variables de test
+# Exécution directe (test)
 # ===========================
-email_gsf = "finance.dpsale@gmail.com"
-mdp_gsf = "1234"
-email_mp = "PCAORACHIDIMH"
-mdp_mp = "PCAORACHIDI*Q14*N"
-num_marche = "MP2025XXXX"  # Remplacer par le numéro réel
-lien_fichier = "./downloads"
-
-# Lancer la navigation si exécution directe
+# Les identifiants ne sont jamais écrits dans le code : ils sont lus dans les
+# variables d'environnement (voir .env.example).
 if __name__ == "__main__":
-    lancer_navigation(email_gsf, mdp_gsf, email_mp, mdp_mp, num_marche, lien_fichier, "chrome")
+    lancer_navigation(
+        os.environ["GSF_EMAIL"],
+        os.environ["GSF_PASSWORD"],
+        os.environ["MP_EMAIL"],
+        os.environ["MP_PASSWORD"],
+        os.environ["MARCHE_NUM"],
+        os.environ["LIEN_FICHIER"],
+        "chrome",
+    )
