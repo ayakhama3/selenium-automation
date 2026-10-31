@@ -1,0 +1,10 @@
+selenium
+customtkinter
+pandas
+openpyxl
+pdfplumber
+pdf2image
+pytesseract
+pillow
+requests
+webdriver-manager
